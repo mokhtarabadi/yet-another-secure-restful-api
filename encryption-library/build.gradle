@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+group 'com.mokhtarabadi'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'commons-codec:commons-codec:1.15'
+    implementation 'org.apache.commons:commons-crypto:1.1.0'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+

@@ -1,0 +1,26 @@
+apply plugin: 'application'
+
+group 'com.mokhtarabadi'
+version '1.0-SNAPSHOT'
+
+application {
+    mainClass = 'com.mokhtarabadi.yasra.server.Main'
+}
+
+dependencies {
+    implementation project(':encryption-library')
+    implementation project(':models-library')
+
+    implementation 'com.sparkjava:spark-core:2.9.3'
+    implementation 'org.slf4j:slf4j-simple:1.7.32'
+
+    implementation 'com.google.code.gson:gson:2.8.8'
+
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}

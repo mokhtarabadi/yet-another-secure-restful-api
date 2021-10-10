@@ -1,0 +1,46 @@
+buildscript {
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.0'
+    }
+}
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion '29.0.2'
+
+    defaultConfig {
+        applicationId 'com.mokhtarabadi.yasra.android'
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName '1.0'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation project(':encryption-library')
+    implementation project(':models-library')
+
+    implementation 'com.google.code.gson:gson:2.8.8'
+
+    implementation 'com.squareup.okhttp3:okhttp:3.12.+'
+
+    implementation 'org.slf4j:slf4j-android:1.7.32'
+
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+}
