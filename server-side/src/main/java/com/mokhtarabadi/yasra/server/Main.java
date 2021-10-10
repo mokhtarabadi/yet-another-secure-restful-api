@@ -20,6 +20,11 @@ public class Main {
 
         Gson gson = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().excludeFieldsWithoutExposeAnnotation().setLenient().create();
 
+        // decrypt, check signature
+        before((request, response) -> {
+
+        });
+
         UserRepository userRepository = new UserRepository();
         post(PATH_CREATE_USER, (request, response) -> {
             return "OK";
@@ -31,6 +36,11 @@ public class Main {
 
         get(PATH_GET_ALL_USERS, (request, response) -> {
             return "OK";
+        });
+
+        // encrypt
+        after((request, response) -> {
+
         });
 
         after((request, response) -> {
